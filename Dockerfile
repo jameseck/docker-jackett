@@ -22,6 +22,8 @@ RUN \
 
 EXPOSE 9117
 
+ENV XDG_CONFIG_HOME /config
+
 VOLUME ["/config"]
 
-ENTRYPOINT [ "/usr/bin/mono", "/Jackett/JackettConsole.exe" ]
+ENTRYPOINT [ "/usr/bin/mono", "/Jackett/JackettConsole.exe", "-d", "/config" ]
