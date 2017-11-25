@@ -1,0 +1,8 @@
+version: '2'
+services:
+  jackett:
+    build: .
+    image: jameseckersall/jackett
+    user: "100000:100000"
+    ports:
+    - 9117:9117
