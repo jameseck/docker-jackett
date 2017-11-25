@@ -1,9 +1,7 @@
 package:
-  mediainfo:
-    installed: true
   mono-core:
     installed: true
-  sqlite:
+  mono-locale-extras:
     installed: true
 process:
   mono:
@@ -11,6 +9,6 @@ process:
 http:
   http://localhost:9117:
     status: 200
-    timeout: 1000
+    timeout: 10000
     body:
     - '<title>Jackett</title>'

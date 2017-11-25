@@ -18,7 +18,7 @@ RUN \
     -o /tmp/Jackett.tar.gz && \
   tar -xvf /tmp/Jackett.tar.gz -C / && \
   rm -f /tmp/Jackett.tar.gz && \
-  chmod -R 0777 /var/log /config /Jackett
+  chmod -R 0775 /var/log /config /Jackett
 
 EXPOSE 9117
 

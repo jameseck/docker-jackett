@@ -1,5 +1,4 @@
 ---
 addr:
-  tcp://localhost:8989:
+  tcp://localhost:9117:
     reachable: true
-    timeout: 500
