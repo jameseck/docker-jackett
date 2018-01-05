@@ -7,7 +7,7 @@ process:
   mono:
     running: true
 file:
-  /config/Jackett/ServerConfig.json:
+  /config/ServerConfig.json:
     exists: true
 http:
   http://localhost:9117:
