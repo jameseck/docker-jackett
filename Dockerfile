@@ -9,7 +9,7 @@ RUN \
   yum install -y epel-release yum-utils && \
   rpm --import "http://keyserver.ubuntu.com/pks/lookup?op=get&search=0x3FA7E0328081BFF6A14DA29AA6A19B38D3D831EF" && \
   yum-config-manager --add-repo http://download.mono-project.com/repo/centos/ && \
-  yum install -y curl gettext jq mono-core mono-devel mono-locale-extras wget && \
+  yum install -y curl gettext mono-core mono-devel mono-locale-extras wget && \
   yum clean all && \
   rm -rf /var/cache/yum/* && \
   mkdir --mode=0777 /config && \
