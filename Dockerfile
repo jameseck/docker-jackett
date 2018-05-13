@@ -11,7 +11,8 @@ RUN \
   yum-config-manager --add-repo http://download.mono-project.com/repo/centos/ && \
   yum install -y curl gettext mono-core mono-devel mono-locale-extras wget && \
   yum clean all && \
-  rm -rf /var/cache/yum/* && \
+  rm -rf /var/cache/yum/*
+RUN \
   mkdir --mode=0777 /config && \
   curl -L "${JACKETT_URL}" -o /tmp/Jackett.tar.gz && \
   tar -xvf /tmp/Jackett.tar.gz -C / && \
