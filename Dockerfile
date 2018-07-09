@@ -2,8 +2,8 @@ FROM centos:7
 
 MAINTAINER James Eckersall <james.eckersall@gmail.com>
 
-ARG JACKETT_VERSION=v0.8.1070
-ARG JACKETT_URL=https://github.com/Jackett/Jackett/releases/download/v0.8.1070/Jackett.Binaries.Mono.tar.gz
+ARG JACKETT_VERSION=v0.8.1258
+ARG JACKETT_URL=https://github.com/Jackett/Jackett/releases/download/v0.8.1258/Jackett.Binaries.Mono.tar.gz
 
 RUN \
   yum install -y epel-release yum-utils && \
