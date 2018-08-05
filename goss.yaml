@@ -11,7 +11,7 @@ file:
     exists: true
 http:
   "http://localhost:9117/UI/Login?ReturnUrl=%2FUI%2FDashboard":
-    status: 200
+    status: 302
     timeout: 10000
     body:
     - '<title>Jackett</title>'
