@@ -42,7 +42,7 @@ post-push:
 tests: docker-build .tests
 
 .tests:
-	dgoss run -p 9117:9117 $(IMAGE):$(VERSION)
+	dgoss run -u 100000:100000 -p 9117:9117 $(IMAGE):$(VERSION)
 
 docker-build: .release
 	docker build -t $(IMAGE):$(VERSION) .
