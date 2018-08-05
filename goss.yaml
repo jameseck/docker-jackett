@@ -10,7 +10,7 @@ file:
   /config/ServerConfig.json:
     exists: true
 http:
-  http://localhost:9117:
+  "http://localhost:9117/UI/Login?ReturnUrl=%2FUI%2FDashboard":
     status: 200
     timeout: 10000
     body:
