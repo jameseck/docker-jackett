@@ -5,6 +5,8 @@ MAINTAINER James Eckersall <james.eckersall@gmail.com>
 ARG JACKETT_VERSION=v0.11.427
 ARG JACKETT_URL=https://github.com/Jackett/Jackett/releases/download/v0.11.427/Jackett.Binaries.Mono.tar.gz
 
+ARG TINI_VERSION=v0.18.0
+
 RUN \
   yum install -y epel-release yum-utils && \
   rpm --import "http://keyserver.ubuntu.com/pks/lookup?op=get&search=0x3FA7E0328081BFF6A14DA29AA6A19B38D3D831EF" && \
@@ -19,10 +21,18 @@ RUN \
   rm -f /tmp/Jackett.tar.gz && \
   chmod -R 0775 /var/log /Jackett
 
+ADD https://github.com/krallin/tini/releases/download/${TINI_VERSION}/tini /tini
+
+RUN \
+  chmod +x /tini
+
+COPY run.py /
+
 EXPOSE 9117
 
 ENV XDG_CONFIG_HOME /config
 
 VOLUME ["/config"]
 
-ENTRYPOINT [ "/usr/bin/mono", "/Jackett/JackettConsole.exe", "-d", "/config" ]
+ENTRYPOINT ["/tini", "--"]
+CMD ["/usr/bin/python2", "/run.py"]
