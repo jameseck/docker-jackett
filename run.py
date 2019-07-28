@@ -93,7 +93,8 @@ CONFIG_DICT["ProxyType"] = PROXY_TYPE
 
 python_dict_to_json_file(CONFIG_DICT, CONFIG_FILE)
 
-with open('/config/api_key.txt', 'w') as f:
-  f.write(CONFIG_DICT["APIKey"])
+if CONFIG_DICT["APIKey"] is not None:
+  with open('/config/api_key.txt', 'w') as f:
+    f.write(CONFIG_DICT["APIKey"])
 
 os.execv("/usr/bin/mono", ("/usr/bin/mono", "/Jackett/JackettConsole.exe", "-d", "/config", LOGGING, TRACING))
