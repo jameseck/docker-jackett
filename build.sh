@@ -6,7 +6,7 @@ if [ "$1" == "--check" ] || [ "$1" == "-c" ]; then
 fi
 
 # Latest release
-URL=$(curl -s https://api.github.com/repos/Jackett/Jackett/releases | jq -r "[ .[] | .assets[] | select(.name | test(\"Jackett.Binaries.Mono.tar.gz\")) ] | first | .browser_download_url")
+URL=$(curl -s https://api.github.com/repos/Jackett/Jackett/releases | jq -r "[ .[] | .assets[] | select(.name | test(\"Jackett.Binaries.LinuxAMDx64.tar.gz\")) ] | first | .browser_download_url")
 
 VERSION=$(echo $URL | cut -d\/ -f8)
 
