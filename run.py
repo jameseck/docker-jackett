@@ -43,6 +43,18 @@ PROXY_URL=env_or_default("PROXY_URL", None)
 PROXY_PORT=env_or_default("PROXY_PORT", None)
 PROXY_TYPE=env_or_default("PROXY_TYPE", None)
 
+LOGGING=env_or_default("LOGGING", None)
+if LOGGING:
+  LOGGING="-l"
+else:
+  LOGGING=""
+
+TRACING=env_or_default("TRACING", None)
+if TRACING:
+  TRACING="-t"
+else:
+  TRACING=""
+
 DEFAULTS_DICT = {
   "Port": 9117,
   "AllowExternal": True,
@@ -84,4 +96,4 @@ python_dict_to_json_file(CONFIG_DICT, CONFIG_FILE)
 with open('/config/api_key.txt', 'w') as f:
   f.write(CONFIG_DICT["APIKey"])
 
-os.execv("/usr/bin/mono", ("/usr/bin/mono", "/Jackett/JackettConsole.exe", "-d", "/config"))
+os.execv("/usr/bin/mono", ("/usr/bin/mono", "/Jackett/JackettConsole.exe", "-d", "/config", LOGGING, TRACING))
