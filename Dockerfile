@@ -10,9 +10,9 @@ ARG TINI_VERSION=v0.18.0
 #  rpm --import "http://keyserver.ubuntu.com/pks/lookup?op=get&search=0x3FA7E0328081BFF6A14DA29AA6A19B38D3D831EF" && \
 #  yum-config-manager --add-repo http://download.mono-project.com/repo/centos/ && \
 #  yum install -y curl gettext mono-core mono-devel mono-locale-extras wget && \
+#  yum install -y epel-release yum-utils && \
 RUN \
-  yum install -y epel-release yum-utils && \
-  yum install curl gettext wget && \
+  yum install -y curl krb5-libs libcurl libicu libunwind libuuid lttng-ust openssl-libs zlib wget && \
   yum clean all && \
   rm -rf /var/cache/yum/*
 RUN \
