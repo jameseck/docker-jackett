@@ -2,8 +2,8 @@ FROM centos:7
 
 MAINTAINER James Eckersall <james.eckersall@gmail.com>
 
-ARG JACKETT_VERSION=
-ARG JACKETT_URL=
+ARG JACKETT_VERSION=v0.11.538
+ARG JACKETT_URL=https://github.com/Jackett/Jackett/releases/download/v0.11.538/Jackett.Binaries.LinuxAMDx64.tar.gz
 
 ARG TINI_VERSION=v0.18.0
 
